@@ -8,12 +8,7 @@ public class FunctionValueFinder {
     public boolean isFunctionValuePresent(List<Integer> sourceList, int requiredValue) {
         Map<Integer, Integer> functionMap = calculateFunctionMap(sourceList);
 
-        for (int x: functionMap.keySet()){
-            if (x == requiredValue)
-                return true;
-        }
-
-        return false;
+        return functionMap.containsValue(requiredValue);
     }
 
     private Map<Integer, Integer> calculateFunctionMap(List<Integer> sourceList) {
